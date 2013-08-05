@@ -1,0 +1,18 @@
+{% load i18n %}
+{% for header in result_headers %}
+<th scope="col"{{ header.class_attrib }}>
+    {% if header.sortable %}
+      {% if header.sorted %}
+      <div class="sortoptions">
+        <a href="{{ header.url }}" class="toggle {% if header.ascending %}icon-chevron-up{% else %}icon-chevron-down{% endif %}" title="{% trans "Toggle sorting" %}"></a>
+      </div>
+      {% endif %}
+    {% endif %}
+  <div class="text">
+    {% if header.sortable %}<a href="{{ header.url }}">{{ header.text|capfirst }}</a>
+    {% else %}<span>{{ header.text|capfirst }}</span>
+    {% endif %}
+  </div>
+  <div class="clear"></div>
+</th>
+{% endfor %}
