@@ -61,10 +61,9 @@ Example usage.::
     
     {% sort_link "Name" "name" %}
     
-It may also be used as.:
+It may also be used as.::
     
     {% sort_link "link text" "field_name" "vis_name" %}
-    
     {% sort_link "Name" "name" "what" %}
     
 This is useful if you do not wnat to expose your database fields in urls.
