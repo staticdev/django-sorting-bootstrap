@@ -82,12 +82,13 @@ sort_headers
 -------------------
 The basic usage is.::
 
-This function is somewhat more complicated to use, but it builds the whole table headers for sorting. In order to use it you have to pass in your view a SimplesChangeList (from sorting_bootstrap.views). Let's have an exemple using a view extending Generic ListView::
+This function is somewhat more complicated to use, but it builds the whole table headers for sorting. In order to use it you have to pass in your view a SimplesChangeList (from sorting_bootstrap.views).
+Let's have an exemple using a view extending Generic ListView::
 
     from django.views.generic import ListView
     class MyView(ListView)
       def get_context_data(self, **kwargs):
-    	    # Calls the base implementation first to get a context
+                # Calls the base implementation first to get a context
             context = super(self.__class__, self).get_context_data(**kwargs)
             
             from sorting_bootstrap.views import SimpleChangeList
@@ -111,7 +112,7 @@ You also need to call the function in your template::
 Credits
 ------------
 
-This app is based on Agiliq's `django-sorting`_ 0.1. It has two improvements over it: ??? and a new tag sort_outra...
+This app is based on Agiliq's `django-sorting`_ 0.1. It has two improvements over it: the new tags and the Twitter Bootstrap compliance idea.
 
 .. _Django: https://www.djangoproject.com/
 .. _Twitter Bootstrap: http://twitter.github.io/bootstrap/
