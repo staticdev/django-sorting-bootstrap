@@ -2,7 +2,7 @@
 <th scope="col" class="{{ class_attrib }}">
   {% if sorted_fields %}
   <div class="sortoptions">
-    <a href="{{ url }}" class="toggle {% if ascending %}icon-chevron-up{% else %}icon-chevron-down{% endif %}" title="{% trans "Toggle sorting" %}"></a>
+    <a href="{{ url }}" class="toggle glyphicon {% if ascending %}glyphicon-chevron-up{% else %}glyphicon-chevron-down{% endif %}" title="{% trans "Toggle sorting" %}"></a>
   </div>
   {% endif %}
   <div class="text">
