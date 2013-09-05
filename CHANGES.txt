@@ -1,0 +1,1 @@
+Change-log for django-sorting-bootstrap.
