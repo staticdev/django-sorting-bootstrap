@@ -104,7 +104,7 @@ You also need to call the function in your template::
 
     <thead>
     <tr>
-    {# sort_headers cl #}
+    {% sort_headers cl %}
     </tr>
     </thead>
 

@@ -1,1 +1,8 @@
 Change-log for django-sorting-bootstrap.
+
+Version 1.0.1 (2013/15/09)
+==========================
+
+*Bug-fix in sort_headers current_sort_field comparison
+*No use of Python reserved word sorted (now is is_sorted)
+*Optimization in has_visible_name - it was taken off for better working
