@@ -37,14 +37,14 @@ def result_headers(context, cl):
         # OK, it is sortable if we got this far
         th_classes = ['sortable', 'column-{0}'.format(field_name)]
         ascending = None
-        sorted = False
+        is_sorted = False
         # Is it currently being sorted on?
-        if context.get('current_sort_field') == field_name:
-            sorted = True
+        if context.get('current_sort_field') == str(i + 1):
+            is_sorted = True
             ascending = False
             th_classes.append('sorted descending')
-        elif context.get('current_sort_field') == '-'+field_name:
-            sorted = True
+        elif context.get('current_sort_field') == '-'+str(i + 1):
+            is_sorted = True
             ascending = True
             th_classes.append('sorted ascending')
 
@@ -76,7 +76,7 @@ def result_headers(context, cl):
             "text": text,
             "url": url,
             "sortable": True,
-            "sorted": sorted,
+            "sorted": is_sorted,
             "ascending": ascending,
             "class_attrib": format_html(' class="{0}"', ' '.join(th_classes)) if th_classes else '',
         }
@@ -174,12 +174,10 @@ class SortedQuerysetNode(template.Node):
         if 'request' in context:
             request = context['request']
             sort_by = request.GET.get('sort_by')
-            has_visible_name = False
             if sort_by:
                 if sort_by in [el.name for el in queryset.model._meta.fields]:
                     queryset = queryset.order_by(sort_by)
                 else:
-                    has_visible_name = True
                     if sort_by in request.session:
                         sort_by = request.session[sort_by]
                         try:
@@ -192,10 +190,7 @@ class SortedQuerysetNode(template.Node):
         else:
             getvars = {}
         if 'sort_by' in getvars:
-            if has_visible_name:
-                context['current_sort_field'] = request.session.get(getvars['sort_by']) or getvars['sort_by']
-            else:
-                context['current_sort_field'] = getvars['sort_by']
+            context['current_sort_field'] = getvars['sort_by']
             del getvars['sort_by']
         if len(getvars.keys()) > 0:
             context['getsortvars'] = "&%s" % getvars.urlencode()

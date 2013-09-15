@@ -4,7 +4,7 @@
     {% if header.sortable %}
       {% if header.sorted %}
       <div class="sortoptions">
-        <a href="{{ header.url }}" class="toggle {% if header.ascending %}icon-chevron-up{% else %}icon-chevron-down{% endif %}" title="{% trans "Toggle sorting" %}"></a>
+        <a href="{{ header.url }}" class="toggle glyphicon {% if header.ascending %}glyphicon-chevron-up{% else %}glyphicon-chevron-down{% endif %}" title="{% trans "Toggle sorting" %}"></a>
       </div>
       {% endif %}
     {% endif %}
