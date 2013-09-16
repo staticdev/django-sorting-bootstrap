@@ -24,7 +24,7 @@ setup(
     scripts=[],
     url='https://github.com/staticdev/django-sorting-bootstrap',
     license='LICENSE',
-    description='Sorting templates API using sorting-bootstrap templatetags and Twitter bootstrap classes.',
+    description='Sorting templates API using sorting-bootstrap templatetags and Bootstrap classes.',
     long_description=read('README.rst'),
     classifiers=[
         "Environment :: Web Environment",
