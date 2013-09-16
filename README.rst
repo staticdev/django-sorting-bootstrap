@@ -4,7 +4,7 @@ django-sorting-bootstrap
 .. image:: https://pypip.in/v/django-sorting-bootstrap/badge.png
         :target: https://pypi.python.org/pypi/django-sorting-bootstrap
 
-Django-sorting-bootstrap is a pluggable mini-API to easy add sorting for querysets, links and table headers in Django_ templates. There is also a new tag that creates headers for sorting tables using `Twitter Bootstrap`_'s layout.
+Django-sorting-bootstrap is a pluggable mini-API to easy add sorting for querysets, links and table headers in Django_ templates. There is also a new tag that creates headers for sorting tables using `Bootstrap`_'s layout.
 
 Installation
 ------------
@@ -75,7 +75,7 @@ The basic usage is.::
     
     {% sort_th "link text" "field_name" %}
 
-sort_th works the same way as sort_link, but the difference is the output template that renders a table header tag <th> using `Twitter Bootstrap`_ classes and Glyphicons.
+sort_th works the same way as sort_link, but the difference is the output template that renders a table header tag <th> using `Bootstrap`_ classes and Glyphicons.
 
 
 sort_headers
@@ -115,5 +115,5 @@ Credits
 This app is based on Agiliq's `django-sorting`_ 0.1. It has two improvements over it: the new tags and the Twitter Bootstrap compliance idea.
 
 .. _Django: https://www.djangoproject.com/
-.. _Twitter Bootstrap: http://twitter.github.io/bootstrap/
-.. _django-sorting: http://twitter.github.io/bootstrap/
+.. _Bootstrap: http://getbootstrap.com/
+.. _django-sorting: http://github.com/agiliq/django-sorting
