@@ -7,6 +7,7 @@ from sorting_bootstrap.util import label_for_field
 register = template.Library()
 
 
+# based on contrib.admin.templatetags.admin_list.result_headers
 def result_headers(context, cl): 
     """
     Generates the list column headers.
@@ -48,7 +49,7 @@ def result_headers(context, cl):
             ascending = True
             th_classes.append('sorted ascending')
 
-### TO-DO: when start using action_checkbox use i instead of i + 1. This +1 is to correct enumerate index
+### TODO: when start using action_checkbox use i instead of i + 1. This +1 is to correct enumerate index
         # builds url
         url = "./?sort_by="
         if ascending is False:
@@ -184,6 +185,16 @@ class SortedQuerysetNode(template.Node):
                             queryset = queryset.order_by(sort_by)
                         except:
                             raise
+                    # added else to fix a bug when using changelist
+                    # TODO: use less ifs and more standard sorting
+                    else:
+                        # sorted ascending
+                        if sort_by[0] != '-':
+                            sort_by = context['cl'].list_display[int(sort_by) - 1]
+                        # sorted descending
+                        else: 
+                            sort_by = '-' + context['cl'].list_display[abs(int(sort_by)) - 1]
+                        queryset = queryset.order_by(sort_by)
         context[self.queryset_var] = queryset
         if 'request' in context:
             getvars = request.GET.copy()
