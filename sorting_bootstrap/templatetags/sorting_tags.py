@@ -161,7 +161,7 @@ def auto_sort(parser, token):
     try:
         tag_name, queryset = token.split_contents()
     except ValueError:
-        raise template.TemplateSyntaxError, "%r tag requires a single argument" % token.contents.split()[0]
+        raise template.TemplateSyntaxError("{0} tag requires a single argument".format(token.contents.split()[0]))
     return SortedQuerysetNode(queryset)
 
 
