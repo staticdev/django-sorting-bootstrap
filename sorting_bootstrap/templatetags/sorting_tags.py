@@ -1,6 +1,11 @@
 from django import template
-from django.utils.html import format_html
 from django.utils.safestring import mark_safe
+
+try:
+    from django.utils.html import format_html
+except ImportError:
+    # support django < 1.5. Taken from django.utils.html
+    from sorting_bootstrap.compat import format_html
 
 from sorting_bootstrap.util import label_for_field
 

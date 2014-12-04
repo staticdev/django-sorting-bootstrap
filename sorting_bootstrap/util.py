@@ -1,8 +1,14 @@
 from django.db import models
 from django.db.models.related import RelatedObject
 from django.forms.forms import pretty_name
-from django.utils.encoding import force_str, force_text
 from django.utils import six
+from django.utils.encoding import force_text
+
+try:
+    from django.utils.encoding import force_str
+except ImportError:
+    # Django < 1.5
+    from django.utils.encoding import force_unicode as force_str
 
 
 def label_for_field(name, model, return_attr=False):
