@@ -1,6 +1,5 @@
 from django import template
 from django.utils.safestring import mark_safe
-
 try:
     from django.utils.html import format_html
 except ImportError:
