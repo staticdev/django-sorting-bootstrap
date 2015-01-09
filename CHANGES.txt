@@ -1,5 +1,15 @@
 Change-log for django-sorting-bootstrap.
 
+Version 1.1 (2015/09/01)
+==========================
+
+*Changed raise statement to work with Python 3
+*Adds support for Django < 1.5
+*Better modularization. Thanks to caioariede.
+*Fix on to use request.path instead of ./ when possible. Thanks to caioariede.
+*Fixed rst2html.py (docutils 0.8 - for compliance with PyPI) warnings in README.rst.
+*Reoganized README.rst for better understanding.
+
 Version 1.0.2 (2013/15/09)
 ==========================
 
