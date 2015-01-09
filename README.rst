@@ -1,5 +1,5 @@
 django-sorting-bootstrap
-===============
+========================
 
 .. image:: https://pypip.in/v/django-sorting-bootstrap/badge.png
         :target: https://pypi.python.org/pypi/django-sorting-bootstrap
@@ -26,7 +26,7 @@ Your templates have four tags available:
 `sort_th`
 `sort_headers`
 
-The basic usage is.::
+Basic usage::
 
     {% auto_sort queryset %}
     {% sort_link "link text" "field_name" %}
@@ -36,28 +36,27 @@ The basic usage is.::
 
 auto_sort
 -------------------
-Basic usage is.::
-
-    {% auto_sort queryset %}
-
 It sorts the queryset in place and replaces the queryset by the sorted queryset.
 
 This needs to be called prior to a slice has been taken from a queryset.
 (Ordering can not be done after the slice has been taken.) In particular this will
 not work with generuc view `object_list`.
 
+Basic usage::
+
+    {% auto_sort queryset %}
+
 
 sort_link
 -----------------
-The basic usage is.::
-    
-    {% sort_link "link text" "field_name" %}
-
 Sort link outputs a link which will sort on the given field. The field to sort on should be
 a database field, or something which `.order_by` of queryset would work.
 
+Basic usage::
 
-Example usage.::
+    {% sort_link "link text" "field_name" %}
+
+Example usage::
     
     {% sort_link "Name" "name" %}
     
@@ -71,19 +70,19 @@ This is useful if you do not wnat to expose your database fields in urls.
 
 sort_th
 -------------------
-The basic usage is.::
-    
-    {% sort_th "link text" "field_name" %}
+It works the same way as sort_link, but the difference is the output template that renders a table header tag <th> using `Bootstrap`_ classes and Glyphicons.
 
-sort_th works the same way as sort_link, but the difference is the output template that renders a table header tag <th> using `Bootstrap`_ classes and Glyphicons.
+Basic usage::
+
+    {% sort_th "link text" "field_name" %}
 
 
 sort_headers
 -------------------
-The basic usage is.::
-
 This function is somewhat more complicated to use, but it builds the whole table headers for sorting. In order to use it you have to pass in your view a SimplesChangeList (from sorting_bootstrap.views).
-Let's have an exemple using a view extending Generic ListView::
+Let's have an exemple using a view extending Generic ListView.
+
+Basic usage::
 
     from django.views.generic import ListView
     class MyView(ListView)
