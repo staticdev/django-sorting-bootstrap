@@ -6,8 +6,8 @@ except ImportError:
     # support django < 1.5. Taken from django.utils.html
     from sorting_bootstrap.compat import format_html
 
-from sorting_bootstrap.util import label_for_field
 from sorting_bootstrap.sort import sort_queryset
+from sorting_bootstrap.util import label_for_field
 
 register = template.Library()
 
