@@ -1,8 +1,17 @@
+|Travis|_ |Python27|_ |PyPi|_
+
+.. |Travis| image:: https://api.travis-ci.org/staticdev/django-sorting-bootstrap.svg?branch=master
+.. _Travis: https://travis-ci.org/staticdev/django-sorting-bootstrap
+
+.. |Python27| image:: https://img.shields.io/badge/python-2.7-blue.svg
+.. _Python27: https://badge.fury.io/py/django-sorting-bootstrap
+
+.. |PyPi| image:: https://badge.fury.io/py/django-sorting-bootstrap.svg
+.. _PyPi: https://badge.fury.io/py/django-sorting-bootstrap
+
+
 django-sorting-bootstrap
 ========================
-
-.. image:: https://pypip.in/v/django-sorting-bootstrap/badge.png
-        :target: https://pypi.python.org/pypi/django-sorting-bootstrap
 
 Django-sorting-bootstrap is a pluggable mini-API to easy add sorting for querysets, links and table headers in Django_ templates. There is also a new tag that creates headers for sorting tables using `Bootstrap`_'s layout.
 
