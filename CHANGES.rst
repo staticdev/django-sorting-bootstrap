@@ -3,7 +3,7 @@ Change-log for django-sorting-bootstrap.
 Version 1.1.1 (2016/27/05)
 ==========================
 
-- Fixed import error with Django 1.8+ (Issue #6), thanks to @gabrielfast.
+- Fixed import error with Django 1.8+ (issue #6), thanks to @gabrielfast.
 - Created basic Travis-CI integration (tests are needed).
 - Improved documentation.
 
