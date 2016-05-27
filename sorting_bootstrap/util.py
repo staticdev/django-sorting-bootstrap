@@ -1,5 +1,8 @@
 from django.db import models
-from django.db.models.related import RelatedObject
+try:
+    from django.db.models.related import RelatedObject
+except ImportError:
+    from django.db.models.fields.related import ForeignObjectRel as RelatedObject
 from django.forms.forms import pretty_name
 from django.utils import six
 from django.utils.encoding import force_text
