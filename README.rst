@@ -1,4 +1,4 @@
-|pyversions|_ |Travis|_ |Python27|_ |PyPi|_
+|pyversions| |Travis| |Python27| |PyPi|
 
 .. |Travis| image:: https://api.travis-ci.org/staticdev/django-sorting-bootstrap.svg?branch=master
 .. _Travis: https://travis-ci.org/staticdev/django-sorting-bootstrap
