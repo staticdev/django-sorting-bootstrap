@@ -1,14 +1,11 @@
-|pyversions| |Travis| |Python27| |PyPi|
-
-.. |Travis| image:: https://api.travis-ci.org/staticdev/django-sorting-bootstrap.svg?branch=master
-.. _Travis: https://travis-ci.org/staticdev/django-sorting-bootstrap
+|pyversions| |Travis| |PyPi|
 
 .. |pyversions| image:: https://img.shields.io/pypi/pyversions/django-sorting-bootstrap.svg
     :target: https://pypi.python.org/pypi/django-sorting-bootstrap
     :alt: Python versions supported
 
-.. |Python27| image:: https://img.shields.io/badge/python-2.7-blue.svg
-.. _Python27: https://badge.fury.io/py/django-sorting-bootstrap
+.. |Travis| image:: https://api.travis-ci.org/staticdev/django-sorting-bootstrap.svg?branch=master
+.. _Travis: https://travis-ci.org/staticdev/django-sorting-bootstrap
 
 .. |PyPi| image:: https://badge.fury.io/py/django-sorting-bootstrap.svg
 .. _PyPi: https://badge.fury.io/py/django-sorting-bootstrap
