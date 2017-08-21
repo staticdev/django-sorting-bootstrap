@@ -92,15 +92,19 @@ sort_headers
 This function is somewhat more complicated to use, but it builds the whole table headers for sorting. In order to use it you have to pass in your view a SimplesChangeList (from sorting_bootstrap.views).
 Let's have an exemple using a view extending Generic ListView.
 
-Basic usage::
+Basic usage
+-----------
+
+::
 
     from django.views.generic import ListView
+    from sorting_bootstrap.views import SimpleChangeList
+    
+    
     class MyView(ListView)
-      def get_context_data(self, **kwargs):
-                # Calls the base implementation first to get a context
-            context = super(self.__class__, self).get_context_data(**kwargs)
-            
-            from sorting_bootstrap.views import SimpleChangeList
+        def get_context_data(self, **kwargs):
+            # Calls the base implementation first to get a context
+            context = super(self.__class__, self).get_context_data(**kwargs)        
             # Gets the fields that are going to be in the headers
             list_display = [i.name for i in self.model._meta.fields]
             # Doesnt show ID field
@@ -108,6 +112,7 @@ Basic usage::
             cl = SimpleChangeList(self.request, self.model, list_display)
             # Pass a change list to the views
             context['cl'] = cl
+            return context
 
 You also need to call the function in your template::
 
