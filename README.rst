@@ -92,14 +92,10 @@ sort_headers
 This function is somewhat more complicated to use, but it builds the whole table headers for sorting. In order to use it you have to pass in your view a SimplesChangeList (from sorting_bootstrap.views).
 Let's have an exemple using a view extending Generic ListView.
 
-Basic usage
------------
-
 ::
 
     from django.views.generic import ListView
     from sorting_bootstrap.views import SimpleChangeList
-    
     
     class MyView(ListView)
         def get_context_data(self, **kwargs):
