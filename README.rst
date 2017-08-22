@@ -25,27 +25,63 @@ To install ``django-sorting-bootstrap`` simply run::
 Configuration
 -------------
 
-Include `sorting_bootstrap` in your `INSTALLED_APPS`
+Include ``sorting_bootstrap`` in your ``INSTALLED_APPS``
 
-Put `{% load sorting_tags %}` at top of your templates.
+Put ``{% load sorting_tags %}`` at top of your templates.
 
 Your templates have four tags available:
 
-`auto_sort`
-`sort_link`
-`sort_th`
-`sort_headers`
+``auto_sort``
+``sort_link``
+``sort_th``
+``sort_headers``
 
-Basic usage::
+Basic usage
+-------------------
+
+::
 
     {% auto_sort queryset %}
     {% sort_link "link text" "field_name" %}
     {% sort_th "link text" "field_name" %}
     {% sort_headers simpleschangelist %}
-    
+
+
+Django views
+-------------------
+
+For sorting to work, your views have to
+
+1. add the current sort field to the context
+2. apply the sorting to the queryset
+
+For a generic ListView, this could be done as follows::
+
+    from django.views.generic import ListView
+
+    class ExampleListView(ListView):
+        model = MyModel
+
+        def get_context_data(self, **kwargs):
+            # add current sort field to context
+            c = super(ExampleListView, self).get_context_data(**kwargs)
+            if "sort_by" in self.request.GET:
+                c["current_sort_field"] = self.request.GET.get("sort_by")
+            return c
+
+        def get_queryset(self):
+            # apply sorting
+            qs = super(ExampleListView, self).get_queryset()
+            if "sort_by" in self.request.GET:
+                qs = qs.order_by(self.request.GET.get("sort_by")
+            return qs
+
+Template Tags
+-------------------
+
 
 auto_sort
--------------------
+^^^^^^^^^^^^^^^^^^
 It sorts the queryset in place and replaces the queryset by the sorted queryset.
 
 This needs to be called prior to a slice has been taken from a queryset.
@@ -58,7 +94,7 @@ Basic usage::
 
 
 sort_link
------------------
+^^^^^^^^^^^^^^^^^^
 Sort link outputs a link which will sort on the given field. The field to sort on should be
 a database field, or something which `.order_by` of queryset would work.
 
@@ -67,19 +103,19 @@ Basic usage::
     {% sort_link "link text" "field_name" %}
 
 Example usage::
-    
+
     {% sort_link "Name" "name" %}
-    
+
 It may also be used as::
-    
+
     {% sort_link "link text" "field_name" "vis_name" %}
     {% sort_link "Name" "name" "what" %}
-    
+
 This is useful if you do not wnat to expose your database fields in urls.
 
 
 sort_th
--------------------
+^^^^^^^^^^^^^^^^^^
 It works the same way as sort_link, but the difference is the output template that renders a table header tag <th> using `Bootstrap`_ classes and Glyphicons.
 
 Basic usage::
@@ -88,7 +124,7 @@ Basic usage::
 
 
 sort_headers
--------------------
+^^^^^^^^^^^^^^^^^^
 This function is somewhat more complicated to use, but it builds the whole table headers for sorting. In order to use it you have to pass in your view a SimplesChangeList (from sorting_bootstrap.views).
 Let's have an exemple using a view extending Generic ListView.
 
@@ -96,11 +132,12 @@ Let's have an exemple using a view extending Generic ListView.
 
     from django.views.generic import ListView
     from sorting_bootstrap.views import SimpleChangeList
-    
+
     class MyView(ListView)
+
         def get_context_data(self, **kwargs):
             # Calls the base implementation first to get a context
-            context = super(self.__class__, self).get_context_data(**kwargs)        
+            context = super(self.__class__, self).get_context_data(**kwargs)
             # Gets the fields that are going to be in the headers
             list_display = [i.name for i in self.model._meta.fields]
             # Doesnt show ID field
