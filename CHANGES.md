@@ -7,7 +7,7 @@
 - Drop of Python 2
 - Drop of Django 1.x
 - Use of Poetry
-- New test folder
+- Removing useless tests
 
 ## Version 1.1.1 (2016/27/05)
 

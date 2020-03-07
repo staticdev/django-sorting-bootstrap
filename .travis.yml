@@ -9,6 +9,3 @@ env:
 
 install:
     - pip install -q $DJANGO
-
-script:
-  - python tests/runtests.py
