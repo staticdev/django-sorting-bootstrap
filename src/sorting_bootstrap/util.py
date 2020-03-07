@@ -1,17 +1,8 @@
 from django.db import models
-try:
-    from django.db.models.related import RelatedObject
-except ImportError:
-    from django.db.models.fields.related import ForeignObjectRel as RelatedObject
+from django.db.models.fields.related import ForeignObjectRel as RelatedObject
 from django.forms.forms import pretty_name
-from django.utils import six
-from django.utils.encoding import force_text
-
-try:
-    from django.utils.encoding import force_str
-except ImportError:
-    # Django < 1.5
-    from django.utils.encoding import force_unicode as force_str
+from django.utils.encoding import force_text, force_str
+import six
 
 
 def label_for_field(name, model, return_attr=False):
@@ -42,14 +33,19 @@ def label_for_field(name, model, return_attr=False):
             elif hasattr(model, name):
                 attr = getattr(model, name)
             else:
-                message = "Unable to lookup '%s' on %s" % (name, model._meta.object_name)
+                message = "Unable to lookup '%s' on %s" % (
+                    name,
+                    model._meta.object_name,
+                )
                 raise AttributeError(message)
 
             if hasattr(attr, "short_description"):
                 label = attr.short_description
-            elif (isinstance(attr, property) and
-                  hasattr(attr, "fget") and
-                  hasattr(attr.fget, "short_description")):
+            elif (
+                isinstance(attr, property)
+                and hasattr(attr, "fget")
+                and hasattr(attr.fget, "short_description")
+            ):
                 label = attr.fget.short_description
             elif callable(attr):
                 if attr.__name__ == "<lambda>":

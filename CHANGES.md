@@ -1,14 +1,19 @@
-Change-log for django-sorting-bootstrap.
+# Change-log for django-sorting-bootstrap.
 
-Version 1.1.1 (2016/27/05)
-==========================
+## Version 2.0.0 (2020/06/03)
+- Change in format for docs to Markdown
+- Use of Black and flake8
+- Drop of Python 2
+- Drop of Django 1.x
+- Use of Poetry
+
+## Version 1.1.1 (2016/27/05)
 
 - Fixed import error with Django 1.8+ (issue #6), thanks to @gabrielfast.
 - Created basic Travis-CI integration (tests are needed).
 - Improved documentation.
 
-Version 1.1 (2015/09/01)
-==========================
+## Version 1.1 (2015/09/01)
 
 - Changed raise statement to work with Python 3
 - Adds support for Django < 1.5
@@ -17,13 +22,11 @@ Version 1.1 (2015/09/01)
 - Fixed rst2html.py (docutils 0.8 - for compliance with PyPI) warnings in README.rst.
 - Reoganized README.rst for better understanding.
 
-Version 1.0.2 (2013/15/09)
-==========================
+## Version 1.0.2 (2013/15/09)
 
 - Bug-fix in autosort for ChangeList usage
 
-Version 1.0.1 (2013/15/09)
-==========================
+## Version 1.0.1 (2013/15/09)
 
 - Bug-fix in sort_headers current_sort_field comparison
 - No use of Python reserved word sorted (now is is_sorted)

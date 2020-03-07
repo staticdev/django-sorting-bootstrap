@@ -1,0 +1,12 @@
+Updating dependencies
+Resolving dependencies...
+
+Writing lock file
+
+
+Package operations: 0 installs, 0 updates, 4 removals
+
+  - Removing asgiref (3.2.3)
+  - Removing django (3.0.4)
+  - Removing pytz (2019.3)
+  - Removing sqlparse (0.3.1)
