@@ -1,11 +1,13 @@
-# Change-log for django-sorting-bootstrap.
+# Change-log for django-sorting-bootstrap
 
 ## Version 2.0.0 (2020/06/03)
+
 - Change in format for docs to Markdown
 - Use of Black and flake8
 - Drop of Python 2
 - Drop of Django 1.x
 - Use of Poetry
+- New test folder
 
 ## Version 1.1.1 (2016/27/05)
 
