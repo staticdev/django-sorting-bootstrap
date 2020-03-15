@@ -14,4 +14,4 @@ install:
   - pip install -q $DJANGO
   - poetry install
 
-script: poetry run pytest
+script: nox
