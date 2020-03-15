@@ -15,9 +15,6 @@ classifiers = [
     'Intended Audience :: Developers',
     'License :: OSI Approved :: MIT License',
 ]
-packages = [
-    {include = "sorting_bootstrap"}
-]
 
 [tool.poetry.dependencies]
 python = "^3.7"
