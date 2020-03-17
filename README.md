@@ -17,7 +17,7 @@ pip install django-sorting-bootstrap
 
 ## Configuration
 
-Include ``sorting_bootstrap`` in your ``INSTALLED_APPS``
+Include ``django_sorting_bootstrap`` in your ``INSTALLED_APPS``
 
 Put ``{% load sorting_tags %}`` at top of your templates.
 

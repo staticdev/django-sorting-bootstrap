@@ -1,14 +1,8 @@
 from django import template
+from django.utils.html import format_html
 from django.utils.safestring import mark_safe
-
-try:
-    from django.utils.html import format_html
-except ImportError:
-    # support django < 1.5. Taken from django.utils.html
-    from sorting_bootstrap.compat import format_html
-
-from sorting_bootstrap.sort import sort_queryset
-from sorting_bootstrap.util import label_for_field
+from django_sorting_bootstrap.sort import sort_queryset
+from django_sorting_bootstrap.util import label_for_field
 
 register = template.Library()
 
@@ -51,8 +45,8 @@ def result_headers(context, cl):
         else:
             url = "./"
 
-        # TODO: when start using action_checkbox use i instead of i + 1. This +1 is to correct enumerate index
-        # builds url
+        # TODO: when start using action_checkbox use i instead of i + 1. T
+        # this +1 is to correct enumerate index
         url += "?sort_by="
 
         if ascending is False:
