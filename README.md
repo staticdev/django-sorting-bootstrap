@@ -1,6 +1,7 @@
 # django-sorting-bootstrap
 
-[![Supported Python Versions](https://img.shields.io/pypi/pyversions/rasa.svg)](https://pypi.python.org/pypi/django-sorting-bootstrap)
+[![Tests](https://github.com/staticdev/django-sorting-bootstrap/workflows/Tests/badge.svg)](https://github.com/staticdev/django-sorting-bootstrap/actions?workflow=Tests)
+[![Supported Python Versions](https://img.shields.io/pypi/pyversions/django-sorting-bootstrap.svg)](https://pypi.python.org/pypi/django-sorting-bootstrap)
 ![Travis](https://api.travis-ci.org/staticdev/django-sorting-bootstrap.svg?branch=master)
 ![PyPi](https://badge.fury.io/py/django-sorting-bootstrap.svg)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
