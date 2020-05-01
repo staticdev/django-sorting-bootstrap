@@ -64,7 +64,7 @@ For a generic ListView, this could be done as follows::
             # apply sorting
             qs = super(ExampleListView, self).get_queryset()
             if "sort_by" in self.request.GET:
-                qs = qs.order_by(self.request.GET.get("sort_by")
+                qs = qs.order_by(self.request.GET.get("sort_by"))
             return qs
 ```
 
