@@ -11,7 +11,7 @@ from nox.sessions import Session
 
 package = "django_sorting_bootstrap"
 python_versions = ["3.8", "3.7"]
-nox.options.sessions = "pre-commit", "safety", "mypy", "tests"
+nox.options.sessions = "pre-commit", "safety", "mypy"  # , "tests"
 locations = "src", "tests", "noxfile.py"
 
 
