@@ -18,24 +18,22 @@ pip install django-sorting-bootstrap
 
 ## Configuration
 
-Include ``django_sorting_bootstrap`` in your ``INSTALLED_APPS``
+Include `django_sorting_bootstrap` in your `INSTALLED_APPS`
 
-Put ``{% load sorting_tags %}`` at top of your templates.
+Put `{% load sorting_tags %}` at top of your templates.
 
 Your templates have four tags available:
 
-* ``auto_sort``
-* ``sort_link``
-* ``sort_th``
-* ``sort_headers``
+- `auto_sort`
+- `sort_link`
+- `sort_th`
+- `sort_headers`
 
 ## Basic usage
 
 ```html
-{% auto_sort queryset %}
-{% sort_link "link text" "field_name" %}
-{% sort_th "link text" "field_name" %}
-{% sort_headers simpleschangelist %}
+{% auto_sort queryset %} {% sort_link "link text" "field_name" %} {% sort_th
+"link text" "field_name" %} {% sort_headers simpleschangelist %}
 ```
 
 ## Django views
@@ -104,15 +102,15 @@ Example usage:
 It may also be used as:
 
 ```html
-{% sort_link "link text" "field_name" "vis_name" %}
-{% sort_link "Name" "name" "what" %}
+{% sort_link "link text" "field_name" "vis_name" %} {% sort_link "Name" "name"
+"what" %}
 ```
 
 This is useful if you do not wnat to expose your database fields in urls.
 
 ## sort_th
 
-It works the same way as sort_link, but the difference is the output template that renders a table header tag `<th>` using `Bootstrap`_ classes and Glyphicons.
+It works the same way as sort*link, but the difference is the output template that renders a table header tag `<th>` using `Bootstrap`* classes and Glyphicons.
 
 Basic usage:
 
@@ -148,9 +146,9 @@ You also need to call the function in your template:
 
 ```html
 <thead>
-    <tr>
+  <tr>
     {% sort_headers cl %}
-    </tr>
+  </tr>
 </thead>
 ```
 

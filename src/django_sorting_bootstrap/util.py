@@ -1,8 +1,9 @@
+import six
 from django.db import models
 from django.db.models.fields.related import ForeignObjectRel as RelatedObject
 from django.forms.forms import pretty_name
-from django.utils.encoding import force_str, force_text
-import six
+from django.utils.encoding import force_str
+from django.utils.encoding import force_text
 
 
 def label_for_field(name, model, return_attr=False):
