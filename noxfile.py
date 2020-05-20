@@ -133,3 +133,20 @@ def mypy(session: Session) -> None:
     install_package(session)
     install(session, "mypy")
     session.run("mypy", *args)
+
+
+@nox.session(python=python_versions)
+def tests(session: Session) -> None:
+    """Run the test suite."""
+    install_package(session)
+    install(session, "coverage[toml]", "pytest")
+    session.run("coverage", "run", "-m", "pytest", *session.posargs)
+    session.run("coverage", "report")
+
+
+@nox.session(python=python_versions)
+def typeguard(session: Session) -> None:
+    """Runtime type checking using Typeguard."""
+    install_package(session)
+    install(session, "pytest", "typeguard")
+    session.run("pytest", f"--typeguard-packages={package}", *session.posargs)
