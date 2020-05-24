@@ -1,3 +1,4 @@
+"""Sorting templatetags."""
 from django import template
 from django.utils.html import format_html
 from django.utils.safestring import mark_safe
@@ -10,9 +11,7 @@ register = template.Library()
 
 # based on contrib.admin.templatetags.admin_list.result_headers
 def result_headers(context, cl):
-    """
-    Generates the list column headers.
-    """
+    """Generates the list column headers."""
     for i, field_name in enumerate(cl.list_display):
         text, attr = label_for_field(field_name, cl.model, return_attr=True)
         if attr:
@@ -85,9 +84,7 @@ def result_headers(context, cl):
 
 @register.inclusion_tag("sorting_bootstrap/sort_headers_frag.html", takes_context=True)
 def sort_headers(context, cl):
-    """
-    Displays the headers and data list together
-    """
+    """Displays the headers and data list together."""
     headers = list(result_headers(context, cl))
     sorted_fields = False
     for h in headers:
@@ -97,7 +94,9 @@ def sort_headers(context, cl):
 
 
 def sort_link(context, text, sort_field, visible_name=None):
-    """Usage: {% sort_link "text" "field_name" %}
+    """Sorts links.
+
+    Usage: {% sort_link "text" "field_name" %}
     Usage: {% sort_link "text" "field_name" "Visible name" %}
     """
     sorted_fields = False
@@ -170,7 +169,10 @@ register.inclusion_tag(
 
 @register.tag
 def auto_sort(parser, token):
-    "usage: {% auto_sort queryset %}"
+    """Auto sort.
+
+    Usage: {% auto_sort queryset %}
+    """
     try:
         tag_name, queryset = token.split_contents()
     except ValueError:
@@ -181,7 +183,10 @@ def auto_sort(parser, token):
 
 
 class SortedQuerysetNode(template.Node):
+    """Sorted Queryset Node class."""
+
     def __init__(self, queryset):
+        """Initialize."""
         self.queryset_var = queryset
         self.queryset = template.Variable(queryset)
 

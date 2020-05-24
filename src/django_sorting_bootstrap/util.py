@@ -1,3 +1,4 @@
+"""Util module."""
 import six
 from django.db import models
 from django.db.models.fields.related import ForeignObjectRel as RelatedObject
@@ -7,12 +8,12 @@ from django.utils.encoding import force_text
 
 
 def label_for_field(name, model, return_attr=False):
-    """
-    Returns a sensible label for a field name. The name can be a callable,
-    property (but not created with @property decorator) or the name of an
-    object's attribute, as well as a genuine fields. If return_attr is
-    True, the resolved attribute (which could be a callable) is also returned.
-    This will be None if (and only if) the name refers to a field.
+    """Returns a sensible label for a field name.
+
+    The name can be a callable, property (but not created with @property decorator)
+    or the name of an object's attribute, as well as a genuine fields.
+    If return_attr is True, the resolved attribute (which could be a callable)
+    is also returned. This will be None if (and only if) the name refers to a field.
     """
     attr = None
     try:

@@ -1,5 +1,9 @@
+"""Sort module."""
+
+
 def sort_queryset(queryset, request, context=None):
-    """ Returns a sorted queryset
+    """Returns a sorted queryset.
+
     The context argument is only used in the template tag
     """
     sort_by = request.GET.get("sort_by")
