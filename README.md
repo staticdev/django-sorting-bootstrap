@@ -5,6 +5,7 @@
 ![Travis](https://api.travis-ci.org/staticdev/django-sorting-bootstrap.svg?branch=master)
 ![PyPi](https://badge.fury.io/py/django-sorting-bootstrap.svg)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
 Django-sorting-bootstrap is a pluggable mini-API to easy add sorting for querysets, links and table headers in [Django](https://www.djangoproject.com/) templates. There is also a new tag that creates headers for sorting tables using [Bootstrap](http://getbootstrap.com/)'s layout.
 
