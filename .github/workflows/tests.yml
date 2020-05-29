@@ -16,10 +16,8 @@ jobs:
           - { python-version: 3.8, os: ubuntu-latest, session: "safety" }
           - { python-version: 3.8, os: ubuntu-latest, session: "mypy-3.8" }
           - { python-version: 3.7, os: ubuntu-latest, session: "mypy-3.7" }
-          - { python-version: 3.6, os: ubuntu-latest, session: "mypy-3.6" }
           - { python-version: 3.8, os: ubuntu-latest, session: "tests-3.8" }
           - { python-version: 3.7, os: ubuntu-latest, session: "tests-3.7" }
-          - { python-version: 3.6, os: ubuntu-latest, session: "tests-3.6" }
           # - { python-version: 3.8, os: windows-latest, session: "tests-3.8" }
           - { python-version: 3.8, os: macos-latest, session: "tests-3.8" }
           # - { python-version: 3.8, os: ubuntu-latest, session: "docs" }
