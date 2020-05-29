@@ -10,7 +10,7 @@ from nox.sessions import Session
 
 package = "django_sorting_bootstrap"
 python_versions = ["3.8", "3.7"]
-nox.options.sessions = "pre-commit", "safety", "mypy"  # , "tests"
+nox.options.sessions = "pre-commit", "safety", "mypy", "tests"
 locations = "src", "tests", "noxfile.py"
 
 
@@ -138,9 +138,11 @@ def mypy(session: Session) -> None:
 def tests(session: Session) -> None:
     """Run the test suite."""
     install_package(session)
-    install(session, "coverage[toml]", "pytest")
-    session.run("coverage", "run", "--parallel", "-m", "pytest", *session.posargs)
-    session.notify("coverage")
+    install(session, "coverage[toml]", "pytest", "pytest-django")
+    try:
+        session.run("coverage", "run", "--parallel", "-m", "pytest", *session.posargs)
+    finally:
+        session.notify("coverage")
 
 
 @nox.session
