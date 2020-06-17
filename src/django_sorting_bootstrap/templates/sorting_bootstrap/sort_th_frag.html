@@ -1,11 +1,11 @@
 {% load i18n %}
 <th scope="col" class="{{ class_attrib }}">
   {% if sorted_fields %}
-  <div class="sortoptions">
-    <a href="{{ url }}" class="toggle glyphicon {% if ascending
-    %}glyphicon-chevron-up{% else %}glyphicon-chevron-down{% endif %}" title="{%
-    trans 'Toggle sorting' %}"/>
-  </div>
+    <div class="sortoptions">
+      <a href="{{ url }}" class="toggle glyphicon {% if ascending
+      %}glyphicon-chevron-up{% else %}glyphicon-chevron-down{% endif %}" title="{%
+      trans 'Toggle sorting' %}"/>
+    </div>
   {% endif %}
   <div class="text">
     <a href="{{ url }}">{{ text }}</a>
