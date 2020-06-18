@@ -1,4 +1,4 @@
-# django-sorting-bootstrap
+# Django Sorting Bootstrap
 
 [![Tests](https://github.com/staticdev/django-sorting-bootstrap/workflows/Tests/badge.svg)](https://github.com/staticdev/django-sorting-bootstrap/actions?workflow=Tests)
 [![Supported Python Versions](https://img.shields.io/pypi/pyversions/django-sorting-bootstrap.svg)](https://pypi.python.org/pypi/django-sorting-bootstrap)
