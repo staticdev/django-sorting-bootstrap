@@ -158,7 +158,7 @@ It may also be used as:
 
 This is useful if you do not wnat to expose your database fields in urls.
 
-## sort_th
+3. sort_th
 
 It works the same way as sort*link, but the difference is the output template that renders a table header tag `<th>` using `Bootstrap`* classes and Glyphicons.
 
@@ -169,7 +169,7 @@ Basic usage:
    {% sort_th "link text" "field_name" %}
 
 
-3. sort_headers
+4. sort_headers
 
 This function is somewhat more complicated to use, but it builds the whole table headers for sorting. In order to use it you have to pass in your view a SimplesChangeList (from sorting_bootstrap.views).
 Let's have an exemple using a view extending Generic ListView.
