@@ -77,8 +77,11 @@ Usage
 
 .. code:: html
 
-   {% auto_sort queryset %} {% sort_link "link text" "field_name" %} {% sort_th
-   "link text" "field_name" %} {% sort_headers simpleschangelist %}
+   {% auto_sort queryset %}
+   {% sort_link "link text" "field_name" %}
+   {% sort_th "link text" "field_name" %}
+   {% sort_headers simpleschangelist %}
+
 
 Django views
 ~~~~~~~~~~~~
@@ -90,19 +93,25 @@ For sorting to work, your views have to
 
 For a generic ListView, this could be done as follows::
 
-.. code:: python
+  from django.views.generic import ListView
 
-    from django.views.generic import ListView
 
-    class ExampleListView(ListView):
-        model = MyModel
+  class ExampleListView(ListView):
+      model = MyModel
 
-        def get_context_data(self, **kwargs):
-            # add current sort field to context
-            c = super(ExampleListView, self).get_context_data(**kwargs)
-            if "sort_by" in self.request.GET:
-                c["current_sort_field"] = self.request.GET.get("sort_by")
-            return c
+      def get_context_data(self, **kwargs):
+          # add current sort field to context
+          c = super(ExampleListView, self).get_context_data(**kwargs)
+          if "sort_by" in self.request.GET:
+              c["current_sort_field"] = self.request.GET.get("sort_by")
+          return c
+
+      def get_queryset(self):
+          # apply sorting
+          qs = super(ExampleListView, self).get_queryset()
+          if "sort_by" in self.request.GET:
+              qs = qs.order_by(self.request.GET.get("sort_by"))
+          return qs
 
 
 Template Tags
@@ -153,7 +162,7 @@ This is useful if you do not wnat to expose your database fields in urls.
 
 3. sort_th
 
-It works the same way as sort*link, but the difference is the output template that renders a table header tag `<th>` using `Bootstrap`* classes and Glyphicons.
+It works the same way as sort_link, but the difference is the output template that renders a table header tag `<th>` using `Bootstrap`* classes and Glyphicons.
 
 Basic usage:
 
@@ -165,29 +174,25 @@ Basic usage:
 4. sort_headers
 
 This function is somewhat more complicated to use, but it builds the whole table headers for sorting. In order to use it you have to pass in your view a SimplesChangeList (from sorting_bootstrap.views).
-Let's have an exemple using a view extending Generic ListView.
+Let's have an exemple using a view extending Generic ListView::
 
-.. code:: python
+  from django.views.generic import ListView
+  from sorting_bootstrap.views import SimpleChangeList
 
-    from django.views.generic import ListView
 
+  class MyView(ListView)
 
-    class ExampleListView(ListView):
-        model = MyModel
-
-        def get_context_data(self, **kwargs):
-            # add current sort field to context
-            c = super(ExampleListView, self).get_context_data(**kwargs)
-            if "sort_by" in self.request.GET:
-                c["current_sort_field"] = self.request.GET.get("sort_by")
-            return c
-
-        def get_queryset(self):
-            # apply sorting
-            qs = super(ExampleListView, self).get_queryset()
-            if "sort_by" in self.request.GET:
-                qs = qs.order_by(self.request.GET.get("sort_by"))
-            return qs
+      def get_context_data(self, **kwargs):
+          # Calls the base implementation first to get a context
+          context = super(self.__class__, self).get_context_data(**kwargs)
+          # Gets the fields that are going to be in the headers
+          list_display = [i.name for i in self.model._meta.fields]
+          # Doesnt show ID field
+          list_display = list_display[1:]
+          cl = SimpleChangeList(self.request, self.model, list_display)
+          # Pass a change list to the views
+          context['cl'] = cl
+          return context
 
 
 You also need to call the function in your template:
