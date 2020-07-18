@@ -104,13 +104,6 @@ For a generic ListView, this could be done as follows::
                 c["current_sort_field"] = self.request.GET.get("sort_by")
             return c
 
-        def get_queryset(self):
-            # apply sorting
-            qs = super(ExampleListView, self).get_queryset()
-            if "sort_by" in self.request.GET:
-                qs = qs.order_by(self.request.GET.get("sort_by"))
-            return qs
-
 
 Template Tags
 ~~~~~~~~~~~~~
@@ -177,21 +170,24 @@ Let's have an exemple using a view extending Generic ListView.
 .. code:: python
 
     from django.views.generic import ListView
-    from sorting_bootstrap.views import SimpleChangeList
 
-    class MyView(ListView)
+
+    class ExampleListView(ListView):
+        model = MyModel
 
         def get_context_data(self, **kwargs):
-            # Calls the base implementation first to get a context
-            context = super(self.__class__, self).get_context_data(**kwargs)
-            # Gets the fields that are going to be in the headers
-            list_display = [i.name for i in self.model._meta.fields]
-            # Doesnt show ID field
-            list_display = list_display[1:]
-            cl = SimpleChangeList(self.request, self.model, list_display)
-            # Pass a change list to the views
-            context['cl'] = cl
-            return context
+            # add current sort field to context
+            c = super(ExampleListView, self).get_context_data(**kwargs)
+            if "sort_by" in self.request.GET:
+                c["current_sort_field"] = self.request.GET.get("sort_by")
+            return c
+
+        def get_queryset(self):
+            # apply sorting
+            qs = super(ExampleListView, self).get_queryset()
+            if "sort_by" in self.request.GET:
+                qs = qs.order_by(self.request.GET.get("sort_by"))
+            return qs
 
 
 You also need to call the function in your template:
