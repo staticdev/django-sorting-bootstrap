@@ -3,7 +3,7 @@ Django Sorting Bootstrap
 
 |PyPI| |Python Version| |License|
 
-|Read the Docs| |Tests| |Codecov|
+|Read the Docs| |Tests|
 
 |pre-commit| |Black|
 
@@ -22,9 +22,6 @@ Django Sorting Bootstrap
 .. |Tests| image:: https://github.com/staticdev/django-sorting-bootstrap/workflows/Tests/badge.svg
    :target: https://github.com/staticdev/django-sorting-bootstrap/actions?workflow=Tests
    :alt: Tests
-.. |Codecov| image:: https://codecov.io/gh/staticdev/django-sorting-bootstrap/branch/master/graph/badge.svg
-   :target: https://codecov.io/gh/staticdev/django-sorting-bootstrap
-   :alt: Codecov
 .. |pre-commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
    :target: https://github.com/pre-commit/pre-commit
    :alt: pre-commit
