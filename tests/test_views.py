@@ -5,7 +5,7 @@ import django_sorting_bootstrap.views
 
 
 class SimpleChangeListTests(TestCase):
-    def test_create(self):
+    def test_create(self) -> None:
         django_sorting_bootstrap.views.SimpleChangeList(
             "request", "model", "list_display"
         )
