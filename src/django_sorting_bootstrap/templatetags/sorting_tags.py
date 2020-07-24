@@ -93,12 +93,10 @@ def sort_headers(context, cl):
     return {"cl": cl, "result_headers": headers, "sorted_fields": sorted_fields}
 
 
+# Usage: {% sort_link "text" "field_name" %}
+# Usage: {% sort_link "text" "field_name" "Visible name" %}
 def sort_link(context, text, sort_field, visible_name=None):
-    """Sorts links.
-
-    Usage: {% sort_link "text" "field_name" %}
-    Usage: {% sort_link "text" "field_name" "Visible name" %}
-    """
+    """Sort links."""
     sorted_fields = False
     ascending = None
     class_attrib = "sortable"
@@ -167,12 +165,10 @@ register.inclusion_tag(
 )(sort_link)
 
 
+# Usage: {% auto_sort queryset %}
 @register.tag
 def auto_sort(parser, token):
-    """Auto sort.
-
-    Usage: {% auto_sort queryset %}
-    """
+    """Auto sort."""
     try:
         tag_name, queryset = token.split_contents()
     except ValueError:
