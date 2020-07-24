@@ -2,10 +2,7 @@
 
 
 def sort_queryset(queryset, request, context=None):
-    """Returns a sorted queryset.
-
-    The context argument is only used in the template tag
-    """
+    """Return a sorted queryset."""
     sort_by = request.GET.get("sort_by")
     if sort_by:
         if sort_by in [el.name for el in queryset.model._meta.fields]:
