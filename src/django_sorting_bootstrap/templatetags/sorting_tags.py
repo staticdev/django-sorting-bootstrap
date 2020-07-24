@@ -1,10 +1,10 @@
 """Sorting templatetags."""
 from django import template
+from django.contrib.admin.utils import label_for_field
 from django.utils.html import format_html
 from django.utils.safestring import mark_safe
 
 from django_sorting_bootstrap.sort import sort_queryset
-from django_sorting_bootstrap.util import label_for_field
 
 register = template.Library()
 
