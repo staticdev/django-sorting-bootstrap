@@ -639,7 +639,7 @@ description = "pytest: simple powerful testing with Python"
 name = "pytest"
 optional = false
 python-versions = ">=3.5"
-version = "6.0.0"
+version = "6.0.1"
 
 [package.dependencies]
 atomicwrites = ">=1.0"
@@ -1054,7 +1054,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "1d5beed3093e8ac084deb0959ec37c614fe94b95340e3f78e30237738feac51f"
+content-hash = "9a46c23d6234a3b696592b37e014054fc0ea0b9fd084193e672f45a9f4b1ee80"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -1362,8 +1362,8 @@ pyparsing = [
     {file = "pyparsing-2.4.7.tar.gz", hash = "sha256:c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1"},
 ]
 pytest = [
-    {file = "pytest-6.0.0-py3-none-any.whl", hash = "sha256:869ec27f9b89964ccfe4fbdd5ccb8d3f285aaa3e9aa16a8491b9c8829148c230"},
-    {file = "pytest-6.0.0.tar.gz", hash = "sha256:a64d8fb4c15cdc70dae047352e980a197d855747cc885eb332cb73ddcc769168"},
+    {file = "pytest-6.0.1-py3-none-any.whl", hash = "sha256:8b6007800c53fdacd5a5c192203f4e531eb2a1540ad9c752e052ec0f7143dbad"},
+    {file = "pytest-6.0.1.tar.gz", hash = "sha256:85228d75db9f45e06e57ef9bf4429267f81ac7c0d742cc9ed63d09886a9fe6f4"},
 ]
 pytest-django = [
     {file = "pytest-django-3.9.0.tar.gz", hash = "sha256:664e5f42242e5e182519388f01b9f25d824a9feb7cd17d8f863c8d776f38baf9"},
