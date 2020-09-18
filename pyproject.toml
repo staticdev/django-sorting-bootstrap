@@ -42,7 +42,7 @@ reorder-python-imports = "^2.3.5"
 pre-commit = "^2.7.1"
 coverage = {extras = ["toml"], version = "^5.3"}
 pytest-django = "^3.10.0"
-pygments = "^2.6.1"
+pygments = "^2.7.1"
 xdoctest = "^0.15.0"
 sphinx = "^3.2.1"
 sphinx-autobuild = "^2020.9.1"
