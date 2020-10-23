@@ -41,7 +41,7 @@ mypy = "^0.790"
 reorder-python-imports = "^2.3.5"
 pre-commit = "^2.7.1"
 coverage = {extras = ["toml"], version = "^5.3"}
-pytest-django = "^4.0.0"
+pytest-django = "^4.1.0"
 pygments = "^2.7.1"
 xdoctest = "^0.15.0"
 sphinx = "^3.2.1"
