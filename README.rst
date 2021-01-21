@@ -1,6 +1,8 @@
 Django Sorting Bootstrap
 ========================
 
+**MAINTAINER NEEDED: this project is complete but won't be updated until further notice. If you have interest in improving it, please contact me by creating an** `issue here`_ **.**
+
 |PyPI| |Python Version| |License|
 
 |Read the Docs| |Tests|
@@ -81,6 +83,7 @@ Credits
 This app is based on `Agiliq's django-sorting`_ 0.1. It has two improvements over it: the new tags and the Twitter Bootstrap compliance idea.
 
 
+.. _issue here: https://github.com/staticdev/staticdev/issues
 .. _Django: https://www.djangoproject.com/
 .. _Bootstrap: http://getbootstrap.com/
 .. _MIT: http://opensource.org/licenses/MIT
