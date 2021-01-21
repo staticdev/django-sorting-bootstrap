@@ -19,6 +19,8 @@ categories:
     label: "refactoring"
   - title: ":lipstick: Style"
     label: "style"
+  - title: ":raising_hand: Help wanted"
+    label: "help wanted"
   - title: ":package: Dependencies"
     labels:
       - "dependencies"
