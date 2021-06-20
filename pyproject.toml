@@ -2,7 +2,7 @@
 name = "django-sorting-bootstrap"
 version = "2.6.2"
 description = "Sorting templates API using sorting, Django templatetags and Bootstrap classes."
-authors = ["Thiago Carvalho D'Ávila <thiagocavila@gmail.com>"]
+authors = ["Thiago D'Ávila <staticdev-support@protonmail.com>"]
 license = "MIT"
 readme = "README.rst"
 repository = "https://github.com/staticdev/django-sorting-bootstrap"
