@@ -44,7 +44,7 @@ pre-commit = "^2.9.3"
 coverage = {extras = ["toml"], version = "^5.3"}
 pytest-django = "^4.1.0"
 pygments = "^2.7.4"
-xdoctest = "^0.15.0"
+xdoctest = "^0.15.5"
 sphinx = "^4.0.2"
 sphinx-autobuild = "^2021.3.14"
 darglint = "^1.5.8"
