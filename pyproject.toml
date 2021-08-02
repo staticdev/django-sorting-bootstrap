@@ -41,7 +41,7 @@ pytest = "^6.2.1"
 mypy = "^0.910"
 reorder-python-imports = "^2.6.0"
 pre-commit = "^2.9.3"
-coverage = {extras = ["toml"], version = "^5.3"}
+coverage = "6.0b1"
 pytest-django = "^4.1.0"
 pygments = "^2.7.4"
 xdoctest = "^0.15.5"
