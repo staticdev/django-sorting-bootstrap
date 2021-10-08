@@ -53,7 +53,7 @@ pep8-naming = "^0.12.1"
 pre-commit-hooks = "^4.0.1"
 typeguard = "^2.10.0"
 sphinx-rtd-theme = "^1.0.0"
-coverage = {version = "6.0", extras = ["toml"]}
+coverage = {version = "6.0.1", extras = ["toml"]}
 
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]
