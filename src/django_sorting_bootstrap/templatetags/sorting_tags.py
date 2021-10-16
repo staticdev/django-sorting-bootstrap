@@ -174,7 +174,7 @@ def auto_sort(parser, token):
     except ValueError:
         raise template.TemplateSyntaxError(
             "{} tag requires a single argument".format(token.contents.split()[0])
-        )
+        ) from None
     return SortedQuerysetNode(queryset)
 
 
