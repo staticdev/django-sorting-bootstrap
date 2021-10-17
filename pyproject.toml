@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "django-sorting-bootstrap"
-version = "2.7.0"
+version = "2.7.1"
 description = "Sorting templates API using sorting, Django templatetags and Bootstrap classes."
 authors = ["Thiago D'Ávila <staticdev-support@protonmail.com>"]
 license = "MIT"
