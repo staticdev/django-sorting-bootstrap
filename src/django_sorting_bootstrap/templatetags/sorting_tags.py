@@ -27,7 +27,7 @@ def result_headers(context, cl):
                 continue
 
         # OK, it is sortable if we got this far
-        th_classes = ["sortable", "column-{}".format(field_name)]
+        th_classes = ["sortable", f"column-{field_name}"]
         ascending = None
         is_sorted = False
         # Is it currently being sorted on?
@@ -173,7 +173,7 @@ def auto_sort(parser, token):
         tag_name, queryset = token.split_contents()
     except ValueError:
         raise template.TemplateSyntaxError(
-            "{} tag requires a single argument".format(token.contents.split()[0])
+            f"{token.contents.split()[0]} tag requires a single argument"
         ) from None
     return SortedQuerysetNode(queryset)
 
