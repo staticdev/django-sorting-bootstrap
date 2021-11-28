@@ -59,10 +59,11 @@ pyupgrade = "^2.29.1"
 
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]
+tests = ["tests", "*/tests"]
 
 [tool.coverage.run]
 branch = true
-source = ["django_sorting_bootstrap"]
+source = ["django_sorting_bootstrap", "tests"]
 
 [tool.coverage.report]
 show_missing = true
