@@ -53,9 +53,9 @@ flake8-rst-docstrings = "^0.2.3"
 pep8-naming = "^0.12.1"
 pre-commit-hooks = "^4.0.1"
 typeguard = "^2.13.2"
-sphinx-rtd-theme = "^1.0.0"
 coverage = {version = "6.2", extras = ["toml"]}
 pyupgrade = "^2.29.1"
+furo = ">=2021.11.12"
 
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]
