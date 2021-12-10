@@ -89,4 +89,4 @@ This app is based on `Agiliq's django-sorting`_ 0.1. It has two improvements ove
 .. _pip: https://pip.pypa.io/
 .. _Agiliq's django-sorting: http://github.com/agiliq/django-sorting
 .. github-only
-.. _Contributor Guide: CONTRIBUTING.rst
+.. _Contributor Guide: https://django-sorting-bootstrap.readthedocs.io/en/latest/contributing.html
